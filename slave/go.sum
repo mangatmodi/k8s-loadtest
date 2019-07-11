@@ -1,11 +1,5 @@
-github.com/Pallinder/go-randomdata v1.2.0 h1:DZ41wBchNRb/0GfsePLiSwb0PHZmT67XY00lCDlaYPg=
-github.com/Pallinder/go-randomdata v1.2.0/go.mod h1:yHmJgulpD2Nfrm0cR9tI/+oAgRqCQQixsA8HyRZfV9Y=
-github.com/applift/alt-script v0.0.0-20190429153703-3c62f2303378 h1:fopbizIqvJrxqW3jPh1OHVdn2sotpeEGk9lSBOsCkyk=
-github.com/applift/alt-script/locust v0.0.0-20190429153703-3c62f2303378 h1:pb1F/V+Qml4FmaZkQIvXsp523wBiKB28YDrn4slK/Pw=
 github.com/asaskevich/EventBus v0.0.0-20180315140547-d46933a94f05 h1:Shem5lRG4gJyrrg9YMIl7dOQazyWCq0Daz4LjompZ28=
 github.com/asaskevich/EventBus v0.0.0-20180315140547-d46933a94f05/go.mod h1:JS7hed4L1fj0hXcyEejnW57/7LCetXggd+vwrRnYeII=
-github.com/erggo/datafiller v0.0.0-20170207191639-26c75631fdca h1:dE71CvE2Fll0FTEStyby3EQxXaXlISCm/5KavlWEMAs=
-github.com/erggo/datafiller v0.0.0-20170207191639-26c75631fdca/go.mod h1:twAfk+SN/cNGTgn9SQhbLk19Sd5TwSOhnqc0zNP5/W0=
 github.com/google/uuid v1.1.1 h1:Gkbcsh/GbpXz7lPftLA3P6TYMwjCLYm83jiFQZF/3gY=
 github.com/google/uuid v1.1.1/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 github.com/klauspost/compress v1.4.0 h1:8nsMz3tWa9SWWPL60G1V6CUsf4lLjWLTNEtibhe8gh8=

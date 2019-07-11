@@ -2,10 +2,11 @@ package main
 
 import (
 	"flag"
-	"github.com/mangatmodi/k8s-loadtest/slave/task"
-	"github.com/myzhan/boomer"
 	"log"
 	"strings"
+
+	"github.com/mangatmodi/k8s-loadtest/slave/task"
+	"github.com/myzhan/boomer"
 )
 
 func main() {

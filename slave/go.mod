@@ -1,10 +1,8 @@
-module github.com/mangatmodi/k8s-loadtest
+module github.com/mangatmodi/k8s-loadtest/slave
 
 require (
-	github.com/Pallinder/go-randomdata v1.2.0 // indirect
 	github.com/asaskevich/EventBus v0.0.0-20180315140547-d46933a94f05 // indirect
-	github.com/erggo/datafiller v0.0.0-20170207191639-26c75631fdca
-	github.com/google/uuid v1.1.1
+	github.com/google/uuid v1.1.1 // indirect
 	github.com/mattn/go-runewidth v0.0.4 // indirect
 	github.com/myzhan/boomer v0.0.0-20190709073904-7f8f16efa4e0
 	github.com/olekukonko/tablewriter v0.0.1 // indirect

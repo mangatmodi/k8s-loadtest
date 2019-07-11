@@ -1,18 +1,15 @@
-FROM golang:1.11-alpine
+FROM golang:1.11
 
-RUN apk add --no-cache git
+RUN apt-get install git
 ENV GOPATH /app
-RUN go get github.com/myzhan/boomer
-RUN go get github.com/valyala/fasthttp
-RUN go get github.com/erggo/datafiller
-RUN go get github.com/google/uuid
+ENV GO111MODULE on
 
-WORKDIR /app/src/github.com/applift/alt-script/locust/slave
-COPY . /app/src/github.com/applift/alt-script/locust/slave/
+WORKDIR /app/src/github.com/mangatmodi/k8s-loadtest/slave
+COPY . /app/src/github.com/mangatmodi/k8s-loadtest/slave
 
 RUN chmod 755 ./run.sh
 RUN go build ./...
-RUN go build -o slave .
+RUN go build -o slave . 
 RUN chmod 755 ./slave
 
 ENTRYPOINT ["./run.sh"]
