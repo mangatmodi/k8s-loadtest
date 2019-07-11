@@ -1,0 +1,36 @@
+version: '2.1'
+
+services:
+
+  locust-master:
+    image: mangatmodi/k8s-loadtest-master:latest
+    ports:
+      - "8089:8089"
+      - "5557:5557"
+      - "5558:5558"  
+    healthcheck:
+      test: >
+          curl GET http://${HOST}:8089/
+      interval: 3s
+      timeout: 1s        
+    networks:
+      skynet:
+        aliases:
+          - "locust-master"
+  locust-slave:
+    image: mangatmodi/k8s-loadtest-slave:latest
+    depends_on:
+      locust-master:
+        condition: service_healthy      
+    networks:
+      skynet:
+        aliases:
+          - "locust-slave"
+    environment:
+          TASK: tracker-click,tracker-conv
+          MASTER_DATA_URL: http://${HOST}:8082
+          TRACKER_URL: ${TRACKE_URL}
+
+networks:
+  skynet:
+

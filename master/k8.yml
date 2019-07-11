@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: locust-master
+  labels:
+    app: locust-master
+spec:
+  type: ClusterIP
+  selector:
+    app: locust-master
+  ports:
+  - name: locust1
+    protocol: TCP
+    port: 5557
+    targetPort: 5557
+  - name: locust2
+    protocol: TCP
+    port: 5558
+    targetPort: 5558
+  - name: locust3
+    protocol: TCP
+    port: 8089
+    targetPort: 8089
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: locust-master-deployment
+  labels:
+    app: locust-master
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: locust-master
+  template:
+    metadata:
+      labels:
+        app: locust-master
+    spec:
+      containers:
+      - name: k8s-loadtest-master
+        image: ${DOCKER_IMAGE}
+        imagePullPolicy: Always  
+        ports:
+        - containerPort: 5557
+        - containerPort: 5558
+        - containerPort: 8089
+        env:
+        - name: LOCUST_DUMMY
+          value: "/locustfile.py"
+        - name: OUT_FILE
+          value: "result"
+      imagePullSecrets:
+      - name: regcred
+
